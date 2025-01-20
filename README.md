@@ -39,3 +39,4 @@
          docker compose up
     
     4. Application ready on http://localhost:5173
+        (Tailwind Css was used for styling.)
