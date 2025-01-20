@@ -1,4 +1,4 @@
-# NEWS AGGREGATOR 
+# NEWS AGGREGATOR FE
 
 ### Before proceeding, ensure you have the following installed on your system:
 
@@ -33,7 +33,7 @@
        Ensure Docker is running on your machine, then proceed with the following:
 
        Build Docker Image
-         docker build
+         docker compose build
 
        Run Docker
          docker compose up
