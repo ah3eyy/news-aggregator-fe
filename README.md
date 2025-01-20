@@ -1,51 +1,41 @@
-# React + TypeScript + Vite
+# NEWS AGGREGATOR 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Before proceeding, ensure you have the following installed on your system:
 
-Currently, two official plugins are available:
+     Docker and Docker Compose
+        Download and install Docker: https://www.docker.com/.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Node.js (Optional)
+        Only needed if you're debugging or running the application locally without Docker.
+        Download Node.js: https://nodejs.org/.
+    
+    Git
+        For cloning the repository.
+        Download Git: https://git-scm.com/.
 
-## Expanding the ESLint configuration
+###  Steps to Set Up the Application
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+    1. Clone Repository 
+        git clone git@github.com:ah3eyy/news-aggregator-fe.git
+        cd your-repo-name
 
-- Configure the top-level `parserOptions` property like this:
+    2. Create an Environment File and Install 
+       Create a .env file in the root of the project. This file contains environment variables used by the React application.
+       cp .env.example .env
+       Edit the .env file as needed:
+       REACT_APP_API_URL=http://your-backend-api-url
+        
+       After creating .env 
+        npm install
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+    3. Build and Run with Docker
+       Ensure Docker is running on your machine, then proceed with the following:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+       Build Docker Image
+         docker build
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# news-aggregator-fe
+       Run Docker
+         docker compose up
+    
+    4. Application ready on http://localhost:5173
